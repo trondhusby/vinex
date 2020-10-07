@@ -9,9 +9,6 @@ import numpy as np
 import os
 import cbsodata
 
-# data directory
-vinex_path = '/home/trond/Documents/wonen_werken/data/'
-
 '''
 Read in data
 '''
@@ -19,13 +16,13 @@ Read in data
 
 # read in data on typolog
 excel_file_name = 'vinex_2013_indeling/CBS_Buurt2013_Vinex_uitleg_type.xlsx'
-vinex_types = pd.read_excel(vinex_path + excel_file_name)
+vinex_types = pd.read_excel(input_path + excel_file_name)
 
-vinex_type_desc = pd.read_excel(vinex_path + excel_file_name, sheet_name = 1)
+vinex_type_desc = pd.read_excel(input_path + excel_file_name, sheet_name = 1)
 
 # buurt en wijk kaarten
 bw_zip_url = 'http://download.cbs.nl/regionale-kaarten/shape-2013-versie-3-0.zip'
-bw_file_name = vinex_path + 'buurt_wijk_kaart_2013/buurt_wijk_kaart_2013.zip'
+bw_file_name = input_path + 'buurt_wijk_kaart_2013/buurt_wijk_kaart_2013.zip'
 
 if not os.path.isfile(bw_file_name):
     print('Downloading buurt en wijk kaarten')

@@ -6,3 +6,4 @@
 *.Rds
 *.rds
 vinex_2013_shape/
+src/.ipynb_checkpoints/
