@@ -5,5 +5,8 @@
 *.RDs
 *.Rds
 *.rds
+*.zip
+*.gpkg
 vinex_2013_shape/
+docs/
 src/.ipynb_checkpoints/

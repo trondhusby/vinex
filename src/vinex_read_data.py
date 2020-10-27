@@ -8,11 +8,13 @@ import pandas as pd
 import numpy as np
 import os
 import cbsodata
+import requests
 
 '''
 Read in data
 '''
 
+input_path = '/home/trond/vinex/data'
 
 # read in data on typolog
 excel_file_name = 'vinex_2013_indeling/CBS_Buurt2013_Vinex_uitleg_type.xlsx'
@@ -27,7 +29,7 @@ bw_file_name = input_path + 'buurt_wijk_kaart_2013/buurt_wijk_kaart_2013.zip'
 if not os.path.isfile(bw_file_name):
     print('Downloading buurt en wijk kaarten')
     r = requests.get(bw_zip_url)
-    with open(bw_file_name, 'wb') as f:
+    with open(bw_file_name,b 'wb') as f:
         f.write(r.content)
 
 bw_shp = gpd.read_file('zip:///' + bw_file_name + '!uitvoer_shape/buurt_2013.shp')
